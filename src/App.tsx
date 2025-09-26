@@ -1,23 +1,29 @@
 import React from 'react';
-import ChartPanel, { type DataPoint } from './components/ChartPanel';
+import ChartPanel from './components/ChartPanel';
 import DataPanel from './components/DataPanel';
-
-const data:DataPoint[] = [
-  { x: 100, y: 200, z: 200 },
-  { x: 120, y: 100, z: 260 },
-  { x: 170, y: 300, z: 400 },
-  { x: 140, y: 250, z: 280 },
-  { x: 150, y: 400, z: 500 },
-  { x: 110, y: 280, z: 200 },
-];
 
 const App = () => {
   return (
-    <div>
-      <ChartPanel data={data}/>
-      <DataPanel/>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-7xl mx-auto space-y-6">
+        {/* Chart Panel */}
+        <div className="bg-white rounded-lg shadow-md p-4">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">
+            Earthquake Chart
+          </h2>
+          <ChartPanel/>
+        </div>
 
-export default App
+        {/* Data Panel */}
+        <div className="bg-white rounded-lg shadow-md p-4">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">
+            Earthquake Data
+          </h2>
+          <DataPanel />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
